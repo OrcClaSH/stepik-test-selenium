@@ -17,11 +17,9 @@ try:
     )
 
     browser.find_element(By.ID, 'book').click()
-
     x = browser.find_element(By.ID, 'input_value').text
     browser.find_element(By.ID, 'answer').send_keys(calc(x))
     browser.find_element(By.ID, 'solve').click()
-
     print('Ответ: ', browser.switch_to.alert.text.split(': ')[-1])
 finally:
     browser.quit()
